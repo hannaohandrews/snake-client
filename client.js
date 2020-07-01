@@ -12,20 +12,18 @@ const connect = function() {
   // interpret incoming data as text
   conn.setEncoding('utf8');
 
+ //sending message to ther server
   conn.on('connect', () => {
     console.log("Successfully connected to game server")
-    //sending message to ther server
+
     conn.write('Name: HOA');
-    //conn.write('Move: up');
+    // conn.write('Move: down');
+
   })
-
-
   conn.on('data', (data) => {
     console.log(data);
   });
   return conn;
-
-  
 
 };
 
